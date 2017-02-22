@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Save the Date: Emma &amp; Jim</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body>
+  <div class="bg">
+    <div class="date">
+      <p>September 01, 2017</p>
+    </div>
+    <div class="location">
+      <p>Burlington, ON</p>
+    </div>
+    <div class="content-container">
+      <div class="content">
+        <p>Save the Date</p>
+        <h1>Emma &amp; Jim</h1>
+        <div id="countdown"></div>
+      </div>
+    </div>
+  </div>
+<script>
+  var end = new Date('09/01/2017 00:00 AM');
+
+  var _second = 1000;
+  var _minute = _second * 60;
+  var _hour = _minute * 60;
+  var _day = _hour * 24;
+  var timer;
+
+  function showRemaining() {
+      var now = new Date();
+      var distance = end - now;
+      if (distance < 0) {
+
+          clearInterval(timer);
+          document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+          return;
+      }
+      var days = Math.floor(distance / _day);
+      var hours = Math.floor((distance % _day) / _hour);
+      var minutes = Math.floor((distance % _hour) / _minute);
+      var seconds = Math.floor((distance % _minute) / _second);
+
+      document.getElementById('countdown').innerHTML = days + ' DAYS |  ';
+      document.getElementById('countdown').innerHTML += hours + ' HRS |  ';
+      document.getElementById('countdown').innerHTML += minutes + ' MINS |  ';
+      document.getElementById('countdown').innerHTML += seconds + ' SECS';
+  }
+
+  timer = setInterval(showRemaining, 1000);
+</script>
+</body>
+</html>

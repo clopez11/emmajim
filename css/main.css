@@ -1,0 +1,170 @@
+/*---------- MOBILE ----------*/
+/* BASE STYLES */
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/maui-img.jpg');
+  background-position: center;
+  background-size: cover;
+  color: #c3ae93; 
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+/* DATE & LOCATION STYLES */
+
+.date,
+.location {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.675em;
+  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.70);
+  color: #f8e0e0;
+  padding: 1em;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  -webkit-transition: font-size 0.5s ease-in-out, padding 0.5s ease-in-out;
+  transition: font-size 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.date {
+  left: 0;
+}
+
+.location {
+  right: 0;
+}
+
+/* MAIN CONTENT STYLES */
+
+.content-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  width: 80%;
+  text-align: center;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+}
+
+.content p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  margin-bottom: -1em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px #808080;
+  -webkit-transition: font-size 0.5s ease-in-out;
+  transition: font-size 0.5s ease-in-out;
+}
+.content h1 {
+  margin-top: .5em;
+  margin-bottom: .1em;
+  font-family: "Abril Fatface", cursive;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 2px #808080;
+  -webkit-transition: font-size 0.5s ease-in-out;
+  transition: font-size 0.5s ease-in-out;
+}
+
+/* COUNTDOWN STYLES */
+
+div #countdown {
+  width: 100%;
+  font-size: 1.5em;
+  color: white;
+  text-shadow: 1px 1px 1px #808080;
+  background: rgba(0,0,0,.3);
+}
+
+/* FOR RESPONSIVE STYLES */
+
+.countdown-section {
+  float: left;
+}
+
+.countdown-section > span {
+  display: block;
+}
+
+.countdown-section + .countdown-section {
+  margin-left: 1em;
+  -webkit-transition: margin-left 0.5s ease-in-out;
+  transition: margin-left 0.5s ease-in-out;
+}
+
+.countdown-section .countdown-amount {
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-bottom: 0.25em;
+  -webkit-transition: font-size 0.5s ease-in-out;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.countdown-section .countdown-period {
+  text-transform: uppercase;
+  font-size: 0.5em;
+  font-weight: 300;
+  letter-spacing: 2px;
+  -webkit-transition: font-size 0.5s ease-in-out;
+  transition: font-size 0.5s ease-in-out;
+}
+
+/*----------------------*/
+/* MEDIA QUERIES STYLES */
+/*----------------------*/
+
+/*---------- TABLET ----------*/
+@media (min-width: 768px) {
+  .countdown-section + .countdown-section {
+    margin-left: 4em;
+  }
+  .countdown-section .countdown-amount {
+    font-size: 2em;
+  }
+  .countdown-section .countdown-period {
+    font-size: 0.75em;
+  }
+  .content {
+    top: 85%;
+  }
+  .content p {
+    margin-bottom: -3em;
+    font-size: 1em;
+  }
+  .content h1 {
+    font-size: 3.5em;
+  }
+  div #countdown {
+    font-size: 2em;
+  }
+}
+
+/*---------- DESKTOP ----------*/
+@media (min-width: 1024px) {
+  .date,
+  .location {
+    font-size: 0.75em;
+    padding: 2em;
+  }
+  .content {
+    top: 85%;
+  }
+  .content p {
+    margin-bottom: -2em;
+  }
+  .content h1 {
+    font-size: 4em;
+    margin-bottom: .1em;
+  }
+  div #countdown {
+    font-size: 2.2em;
+  }
+}
